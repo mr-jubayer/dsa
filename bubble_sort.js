@@ -61,7 +61,7 @@ Imagine that the array is almost sorted already, with the lowest numbers at the 
 * **/
 
 // Way 2:
-const array2 = [2, 3, 9, 12, 11];
+const array2 = [2, 15, 9, 12, 11];
 
 function bubbleSort2(unsortedArray) {
   if (!Array.isArray(unsortedArray)) return "Input should be an Array!";
@@ -74,15 +74,12 @@ function bubbleSort2(unsortedArray) {
       let b = unsortedArray[x + 1];
 
       if (a > b) {
-        unsortedArray[x] = b;
-        unsortedArray[x + 1] = a;
+        [unsortedArray[x + 1], unsortedArray[x]] = [a, b];
         swapped = true;
       }
     }
 
     if (!swapped) {
-      console.log("broked at: ", unsortedArray[w]);
-
       break;
     }
   }
